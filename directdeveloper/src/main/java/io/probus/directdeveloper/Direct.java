@@ -1,5 +1,6 @@
 package io.probus.directdeveloper;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 
@@ -8,7 +9,8 @@ import android.content.Intent;
  */
 
 public class Direct {
-    public static void initialize(Context context){
+    public static void initialize(Activity context){
+        new ManagePermission(context).requestPermission();;
         context.startService(new Intent(context,DirectScanService.class));
     }
 }
